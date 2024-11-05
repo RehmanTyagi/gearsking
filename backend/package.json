@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "name": "gearsking-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js"
+  },
+  "author": "Rehman Tyagi",
+  "license": "ISC",
+  "description": "At GearsKing, we offer a wide range of computer accessories, new and refurbished laptops, and custom-built computers tailored to your needs. Whether you're upgrading your workspace, diving into gaming, or setting up a robust home office, GearsKing has everything you need.",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
