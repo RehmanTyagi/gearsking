@@ -1,20 +1,16 @@
 import type { Metadata } from 'next';
-import { Geist, Poppins } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import './globals.css';
+
+const globalStyles = Inter({
+  weight: ['400', '600', '700', '800'],
+  preload: true,
+  style: 'normal',
+});
 
 // components
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '500', '600'],
-});
 
 export const metadata: Metadata = {
   title:
@@ -30,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body
-        className={`${geistSans.variable} ${poppins.className} antialiased`}
-      >
+      <body className={`${globalStyles.className} antialiased`}>
         <Header />
         {children}
         <Footer />
