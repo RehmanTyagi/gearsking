@@ -57,8 +57,8 @@ const Footer = () => {
   ];
 
   return (
-    <div className="container mx-auto bg-customGray">
-      <div className="flex flex-col items-center justify-between border px-10 md:flex-row xl:px-32">
+    <div className="container mx-auto">
+      <div className="flex flex-col items-center justify-between rounded-lg border px-10 md:flex-row xl:px-32 dark:border-gray-700">
         <div className="hidden items-center py-5 md:block md:gap-10 lg:flex">
           <h1 className="text-3xl font-bold">Gearsking</h1>
           <p className="text-base text-gray-500">
@@ -99,7 +99,7 @@ const Footer = () => {
           <h1 className="text-lg font-bold">Contacts Us</h1>
           <LinkTag
             href="tel:7210708977"
-            className="flex items-center justify-between gap-4 rounded-md border-2 bg-white p-3"
+            className="flex items-center justify-between gap-4 rounded-md border p-3"
           >
             <MdOutlineSupportAgent className="text-4xl" />
             <div className="text-sm sm:text-xs">

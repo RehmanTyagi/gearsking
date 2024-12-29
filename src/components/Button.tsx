@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 interface ButtonProps {
-  type: 'button' | 'submit' | 'reset';
+  type: "button" | "submit" | "reset";
   onClick?: () => void;
   className?: string;
   children: React.ReactNode;
@@ -16,7 +16,7 @@ const Button: React.FC<ButtonProps> = ({
     <button
       onClick={onClick}
       type={type}
-      className={`${className} p-2 font-medium rounded-md bg-primary/70 hover:bg-primary transition text-white`}
+      className={`${className} bg-primary/70 p-2.5 font-medium text-white transition hover:bg-primary`}
     >
       {children}
     </button>
