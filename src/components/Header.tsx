@@ -1,10 +1,12 @@
 "use client";
 
 // components
+import { Select } from "@headlessui/react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { GiShoppingCart, GiHamburgerMenu } from "react-icons/gi";
 import { GrUnorderedList } from "react-icons/gr";
 import Link from "next/link";
+import Image from "next/image";
 import Button from "@/components/Button";
 
 import { useTheme } from "@/hooks/useTheme";
@@ -13,7 +15,7 @@ const Header = () => {
   return (
     <>
       <button onClick={toggleTheme}>toggle theme {theme}</button>
-      <header role="top-header" className="bg-gray-100 dark:bg-gray-800">
+      <div role="top-header" className="bg-gray-100 dark:bg-gray-800">
         <div className="container mx-auto flex items-center justify-center p-3 text-[10px] md:text-sm lg:justify-between">
           <Link href="tel:7210708977" className="hidden lg:block">
             Call us: 91721070899
@@ -40,39 +42,40 @@ const Header = () => {
             </Link>
           </div>
         </div>
-      </header>
-      <header role="main-header" className="sticky top-0 shadow-md">
-        <div className="container mx-auto flex items-center justify-between gap-10 p-4 text-sm">
-          <span className="text-lg font-bold text-primary sm:text-2xl">
-            Gearsking
-          </span>
-          <div
-            className="hidden border md:flex lg:flex-grow dark:border-gray-700"
-            role="search-bar"
-          >
-            <Button
-              type="button"
-              className="flex items-center gap-2 text-sm font-medium"
-            >
-              <GrUnorderedList className="text-lg" />
-              <span>category</span>
-            </Button>
-            <input
-              type="text"
-              placeholder="Search , e.g. Apple Macbook Pro"
-              className="flex-grow bg-transparent px-5 text-gray-600 outline-none dark:text-gray-300"
+      </div>
+      <header
+        role="top-navbar"
+        className="sticky top-0 flex flex-col gap-2.5 bg-white p-4 dark:bg-gray-900"
+      >
+        <div className="container mx-auto flex items-center justify-between gap-10 text-sm">
+          <div>
+            <p className="ml-1 text-[10px] text-gray-500/50">
+              Delivering address
+            </p>
+            <Select className="relative bottom-1 max-w-48 border-none bg-transparent !p-0 text-[12px] outline-none">
+              <option value="rajiv-nagar-mandoli">
+                England, Central London, walk street, 123
+              </option>
+            </Select>
+          </div>
+          <div className="flex items-center gap-4">
+            <Image
+              src="/icons/cart.svg"
+              alt="GearsKing"
+              width={30}
+              height={30}
             />
-            <Button className="px-5 text-2xl" type="button">
-              <AiOutlineSearch />
-            </Button>
+            <Image
+              src="/icons/Notification.svg"
+              alt="GearsKing"
+              width={30}
+              height={30}
+            />
           </div>
-          <div className="flex items-center gap-4 lg:gap-8" role="user-actions">
-            <GiShoppingCart className="cursor-pointer text-2xl md:text-3xl lg:text-3xl" />
-            <Button className="sm:text-base" type="button">
-              Login
-            </Button>
-            <GiHamburgerMenu className="lg:hidden" size={25} />
-          </div>
+        </div>
+        <div className="flex items-center gap-3 rounded-lg border px-3 py-2 text-xs text-gray-400 dark:border-gray-500">
+          <Image src="/icons/Search.svg" alt="search" width={20} height={20} />
+          <p className="">Search here ...</p>
         </div>
       </header>
     </>
