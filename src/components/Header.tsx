@@ -14,7 +14,7 @@ const Header = () => {
   const { theme, toggleTheme } = useTheme();
   return (
     <>
-      <button onClick={toggleTheme}>toggle theme {theme}</button>
+      {/* <button onClick={toggleTheme}>toggle theme {theme}</button> */}
       <div role="top-header" className="bg-gray-100 dark:bg-gray-800">
         <div className="container mx-auto flex items-center justify-center p-3 text-[10px] md:text-sm lg:justify-between">
           <Link href="tel:7210708977" className="hidden lg:block">
@@ -45,7 +45,7 @@ const Header = () => {
       </div>
       <header
         role="top-navbar"
-        className="sticky top-0 flex flex-col gap-2.5 bg-white p-4 dark:bg-gray-900"
+        className="sticky top-0 z-50 flex flex-col gap-2.5 bg-white p-4 dark:bg-gray-900"
       >
         <div className="container mx-auto flex items-center justify-between gap-10 text-sm">
           <div>
@@ -73,7 +73,7 @@ const Header = () => {
             />
           </div>
         </div>
-        <div className="flex items-center gap-3 rounded-lg border px-3 py-2 text-xs text-gray-400 dark:border-gray-500">
+        <div className="flex items-center gap-3 rounded-lg border px-3 py-2 text-xs text-gray-400 dark:border-gray-500 lg:hidden">
           <Image src="/icons/Search.svg" alt="search" width={20} height={20} />
           <p className="">Search here ...</p>
         </div>
